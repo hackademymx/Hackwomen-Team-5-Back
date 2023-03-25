@@ -1,6 +1,6 @@
 ENV="dev"
 
-DJANGO_SECRET_KEY="django-insecure-aey90s^bn!0exni6@4_4^mj_@z51=ui&+7!ikkz))s5+hqq8oi"
+DJANGO_SECRET_KEY=config('DJANGO_SECRET_KEY', default='change_this_in_production!')
 DJANGO_ALLOWED_HOSTS='*'
 CORS_ALLOW_ALL_ORIGINS=True
 CORS_ALLOWED_ORIGINS=
@@ -14,6 +14,3 @@ POSTGRES_USER=test
 POSTGRES_PASSWORD=test
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
-
-# DATABASE_URL format
-# <database_type>://<username>:<password>@<hostname>:<database_port>/<database_name>
