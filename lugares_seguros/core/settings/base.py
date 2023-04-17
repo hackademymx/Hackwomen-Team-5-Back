@@ -44,8 +44,9 @@ INSTALLED_APPS = [
 
 
     # Apps locales
-    'places',
+    
     'comments',
+    'users',
     
 ]
 
