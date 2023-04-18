@@ -61,6 +61,7 @@ INSTALLED_APPS += [
     'places',
     'comments',
     'users',
+    'likesdislikes',
 
 ]
 

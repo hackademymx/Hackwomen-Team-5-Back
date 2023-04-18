@@ -22,5 +22,6 @@ urlpatterns = [
     path('places/', include('places.urls')),
     path('comments/', include('comments.urls')),
     path('auth/', include('users.urls')),
+    path('likesdislikes/', include('likesdislikes.urls')),
 
 ]
