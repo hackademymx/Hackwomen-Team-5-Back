@@ -14,6 +14,11 @@ class CommentAPIView(APIView):
         serializer.is_valid (raise_exception= True)
         serializer.save()
         return Response(serializer.data, status.HTTP_201_CREATED)
+    
+   # def get(self, request):
+    #    comments = Comments.objects.all()
+    #    serializer = CommentsSerializer(comments, many=True)
+    #    return Response (serializer.data, status=status.HTTP_200_OK)
 
 
 class CommentSingleView (APIView):
@@ -32,69 +37,7 @@ class CommentSingleView (APIView):
     
 
     def delete(self, request,pk):
-        place = get_object_or_404 (Comments, pk=pk)
-        place.delete()
+        comment = get_object_or_404 (Comments, pk=pk)
+        comment.delete()
         return Response('Comentario eliminado', status= status.HTTP_204_NO_CONTENT)
-    
-'''
-class CommentAddLikeView(APIView):
-    def post (self, request,pk):
-        post = Comments.objects.get (pk=pk)
-        
-        is_dislike =False 
-
-        for dislike in post.dislikes.all ():
-            if dislike == request.user:
-                is_dislike =True
-                break 
-        
-        if is_dislike:
-            post.dislikes.remove(request.user)
-
-        is_like = False
-        for like in post.likes.all():
-            if like == request.user:
-                is_like =True
-                break
-
-        if not is_like:
-            post.likes.add(request.user)
-        if is_like:
-            post.likes.remove(request.user)
-
-        
-      #  next =request.POST.get('next','/')
-        return Response()
-    
-
-    
-class CommentAddDislike(APIView):
-    def post (self, request,pk):
-        post = Comments.objects.get (pk=pk)
-
-        is_like =False 
-        for like in post.likes.all():
-            if like == request.user:
-                is_like = True
-                break
-
-        if is_like:
-            post.likes.remove(request.user)
-
-        is_dislike =False
-        for dislike in post.dislikes.all():
-            if dislike == request.user:
-                is_dislike = True
-                break
-
-        if not is_dislike:
-            post.dislikes.add(request.user)
-        if is_dislike:
-            post.dislikes.remove(request.user)
-
-      #  next =request.POST.get('next','/')
-        return HTTPResponseRedirect(next)  
-
-
-         
-'''
+   

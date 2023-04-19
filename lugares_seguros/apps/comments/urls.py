@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CommentAPIView, CommentSingleView #CommentAddDislike, CommentAddLikeView
+from .views import CommentAPIView, CommentSingleView
 
 urlpatterns = [
     path ('', CommentAPIView.as_view(),),
