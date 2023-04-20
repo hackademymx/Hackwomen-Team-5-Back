@@ -17,6 +17,11 @@ class PlaceAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        try:
+            file = request.data['image']
+            request.data['image'] = file  
+        except KeyError:
+            file = None  
         serializer = PlaceSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
