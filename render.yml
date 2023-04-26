@@ -1,34 +1,31 @@
 services:
-  type: web
-  name: Hackwomen-Team-5-back
+  # A Docker web service
+- type: web
+  name: Hackwomen-Team-5-Back
   env: docker
-  autoDeploy: False
-  plan: free
-  region: oregon
+  autoDeploy: false
+  plan: free 
+  region: oregon 
   envVars:
-    key: ENV
-    sync: False
-    key: DJANGO_SECRET_KEY
-    sync: False
-    key: DJANGO_ALLOWED_HOSTS
-    sync: False
-    key: CORS_ALLOW_ALL_ORIGINS
-    sync: False
-    key: CORS_ALLOWED_ORIGINS
-    sync: False
-    key: CSRF_TRUSTED_ORIGINS
-    sync: False
-    key: CSRF_COOKIE_SECURE
-    sync: False
-    key: DEBUG
-    sync: False
-    key: POSTGRES_DB
-    sync: False
-    key: POSTGRES_USER
-    sync: False
-    key: POSTGRES_PASSWORD
-    sync: False
-    key: POSTGRES_HOST
-    sync: False
-    key: POSTGRES_PORT
-    sync: False
+      - key: ENV
+        sync: false
+      - key: DJANGO_ALLOWED_HOSTS
+        sync: false
+      - key: CORS_ALLOW_ALL_ORIGINS
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: false
+      - key: DEBUG
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWD
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
